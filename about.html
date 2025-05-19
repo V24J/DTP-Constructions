@@ -1,0 +1,269 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About Us - DTP Constructions</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&family=Open+Sans:wght@400;600&display=swap" rel="stylesheet">
+    <style>
+        .about-hero {
+            height: 50vh;
+            background: linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.6)),
+                        url('construction-bg.jpg') center/cover;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            color: white;
+        }
+
+        .about-content {
+            padding: 5rem 5%;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .mission-section {
+            background: #f9f9f9;
+            padding: 4rem 5%;
+            margin: 2rem 0;
+        }
+
+        .team-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+            margin: 3rem 0;
+        }
+
+        .team-member {
+            text-align: center;
+            padding: 2rem;
+            background: white;
+            border-radius: 10px;
+            box-shadow: 0 3px 10px rgba(0,0,0,0.1);
+        }
+
+        .team-member img {
+            width: 200px;
+            height: 200px;
+            border-radius: 50%;
+            object-fit: cover;
+            margin-bottom: 1rem;
+        }
+
+        .certifications {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 2rem;
+            margin: 3rem 0;
+        }
+
+        .cert-card {
+            padding: 2rem;
+            background: white;
+            border-radius: 10px;
+            box-shadow: 0 3px 10px rgba(0,0,0,0.1);
+            text-align: center;
+        }
+
+        .why-choose-us {
+            background: #f9f9f9;
+            padding: 4rem 5%;
+            margin: 2rem 0;
+        }
+
+        .features-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 2rem;
+            margin-top: 3rem;
+        }
+
+        .feature-item {
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+            padding: 1.5rem;
+            background: white;
+            border-radius: 10px;
+            box-shadow: 0 3px 10px rgba(0,0,0,0.1);
+        }
+
+        .feature-item i {
+            font-size: 2rem;
+            color: #e67e22;
+        }
+    </style>
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="navbar">
+        <div class="logo">
+            <img src="logo.png" alt="DTP Construction Logo" class="logo-img">
+            <h1>DTP-Constructions</h1>
+        </div>
+        <ul class="nav-links">
+            <li><a href="index.html">Home</a></li>
+            <li><a href="about.html">About</a></li>
+            <li><a href="service.html">Services</a></li>
+            <li><a href="project.html">Projects</a></li>
+            <li><a href="index.html#contact">Contact</a></li>
+        </ul>
+        <div class="burger">
+            <div class="line1"></div>
+            <div class="line2"></div>
+            <div class="line3"></div>
+        </div>
+    </nav>
+
+    <!-- About Hero Section -->
+    <section class="about-hero">
+        <div class="hero-content">
+            <h1>About DTP Constructions</h1>
+            <p>Building Excellence Since 2010</p>
+        </div>
+    </section>
+
+    <!-- Company History and Mission -->
+    <section class="about-content">
+        <h2>Our Story</h2>
+        <p>DTP Constructions was founded in 2010 with a clear mission: To deliver high-quality, cost-effective construction solutions while maintaining transparency, integrity, and long-term relationships with our clients.</p>
+        <p>Over the years, DTP Constructions has grown from a small operation into a trusted name in residential, commercial, and civil infrastructure projects across the region.</p>
+    </section>
+
+    <!-- Mission Section -->
+    <section class="mission-section">
+        <div class="about-content">
+            <h2>Our Mission</h2>
+            <p>To be the leading construction company known for excellence, innovation, and client satisfaction. We strive to build not just structures, but lasting relationships with our clients and communities.</p>
+        </div>
+    </section>
+
+    <!-- Team Section -->
+    <section class="about-content">
+        <h2>Our Leadership Team</h2>
+        <div class="team-grid">
+            <div class="team-member">
+                <img src="team/ceo.jpg" alt="CEO">
+                <h3>Vipul Patel</h3>
+                <p>Founder & CEO</p>
+                <p>20+ years of construction experience</p>
+            </div>
+            <div class="team-member">
+                <img src="team/manager.jpg" alt="Project Manager">
+                <h3>Chandrakant Patel</h3>
+                <p>Founder & CFO & CMO</p>
+                <p>15+ years in construction management</p>
+            </div>
+            <div class="team-member">
+                <img src="team/architect.jpg" alt="Lead Architect">
+                <h3>Harsh Patel</h3>
+                <p>Lead Architect & Project Manager</p>
+                <p>12+ years of architectural design</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Certifications -->
+    <section class="about-content">
+        <h2>Our Certifications</h2>
+        <div class="certifications">
+            <div class="cert-card">
+                <i class="fas fa-certificate"></i>
+                <h3>Licensed General Contractor</h3>
+                <p>License #XXXXXX</p>
+            </div>
+            <div class="cert-card">
+                <i class="fas fa-award"></i>
+                <h3>ISO 9001:2015</h3>
+                <p>Quality Management Certified</p>
+            </div>
+            <div class="cert-card">
+                <i class="fas fa-shield-alt"></i>
+                <h3>Health & Safety Standards</h3>
+                <p>Certified in Safety Protocols</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Why Choose Us -->
+    <section class="why-choose-us">
+        <div class="about-content">
+            <h2>Why Choose DTP Constructions?</h2>
+            <div class="features-grid">
+                <div class="feature-item">
+                    <i class="fas fa-tools"></i>
+                    <div>
+                        <h3>Expertise Across Sectors</h3>
+                        <p>Residential, commercial, and civil construction</p>
+                    </div>
+                </div>
+                <div class="feature-item">
+                    <i class="fas fa-clock"></i>
+                    <div>
+                        <h3>On-Time Delivery</h3>
+                        <p>Proven record of meeting deadlines</p>
+                    </div>
+                </div>
+                <div class="feature-item">
+                    <i class="fas fa-phone"></i>
+                    <div>
+                        <h3>Client-Centered Approach</h3>
+                        <p>Transparent communication at every stage</p>
+                    </div>
+                </div>
+                <div class="feature-item">
+                    <i class="fas fa-check-circle"></i>
+                    <div>
+                        <h3>Quality Assurance</h3>
+                        <p>Strict standards and top-grade materials</p>
+                    </div>
+                </div>
+                <div class="feature-item">
+                    <i class="fas fa-lightbulb"></i>
+                    <div>
+                        <h3>Innovative Solutions</h3>
+                        <p>Blend of modern techniques and proven practices</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="footer-content">
+            <div class="footer-section">
+                <h3>DTP Constructions</h3>
+                <p>Building excellence since 2010</p>
+            </div>
+            <div class="footer-section">
+                <h3>Quick Links</h3>
+                <ul>
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="about.html">About</a></li>
+                    <li><a href="service.html">Services</a></li>
+                    <li><a href="project.html">Projects</a></li>
+                </ul>
+            </div>
+            <div class="footer-section">
+                <h3>Follow Us</h3>
+                <div class="social-links">
+                    <a href="#"><i class="fab fa-facebook"></i></a>
+                    <a href="#"><i class="fab fa-twitter"></i></a>
+                    <a href="#"><i class="fab fa-linkedin"></i></a>
+                    <a href="#"><i class="fab fa-instagram"></i></a>
+                </div>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2025 DTP Constructions. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>

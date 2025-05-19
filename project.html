@@ -1,0 +1,392 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Projects - DTP Constructions</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&family=Open+Sans:wght@400;600&display=swap" rel="stylesheet">
+    <style>
+        .project-hero {
+            height: 50vh;
+            background: linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.6)),
+                        url('construction-bg.jpg') center/cover;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            color: white;
+        }
+
+        .projects-content {
+            padding: 5rem 5%;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .filter-buttons {
+            display: flex;
+            justify-content: center;
+            gap: 1rem;
+            margin-bottom: 3rem;
+            flex-wrap: wrap;
+        }
+
+        .filter-btn {
+            padding: 0.5rem 1.5rem;
+            background: #f9f9f9;
+            border: 2px solid #e67e22;
+            color: #e67e22;
+            border-radius: 25px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+
+        .filter-btn.active, .filter-btn:hover {
+            background: #e67e22;
+            color: white;
+        }
+
+        .projects-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+        }
+
+        .project-card {
+            background: white;
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: 0 3px 10px rgba(0,0,0,0.1);
+            transition: transform 0.3s ease;
+        }
+
+        .project-card:hover {
+            transform: translateY(-5px);
+        }
+
+        .project-image {
+            height: 250px;
+            overflow: hidden;
+            position: relative;
+        }
+
+        .project-image img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        .project-overlay {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(230, 126, 34, 0.9);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            opacity: 0;
+            transition: opacity 0.3s ease;
+        }
+
+        .project-card:hover .project-overlay {
+            opacity: 1;
+        }
+
+        .project-details {
+            padding: 1.5rem;
+        }
+
+        .project-details h3 {
+            margin-bottom: 0.5rem;
+        }
+
+        .project-meta {
+            display: flex;
+            gap: 1rem;
+            color: #666;
+            font-size: 0.9rem;
+            margin-bottom: 1rem;
+        }
+
+        .project-meta i {
+            color: #e67e22;
+        }
+
+        /* Blog Section Styles */
+        .blog-section {
+            background: #f9f9f9;
+            padding: 5rem 5%;
+            margin-top: 5rem;
+        }
+
+        .blog-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+            margin-top: 3rem;
+        }
+
+        .blog-card {
+            background: white;
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: 0 3px 10px rgba(0,0,0,0.1);
+        }
+
+        .blog-image {
+            height: 200px;
+            overflow: hidden;
+        }
+
+        .blog-image img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        .blog-content {
+            padding: 1.5rem;
+        }
+
+        .blog-date {
+            color: #666;
+            font-size: 0.9rem;
+            margin-bottom: 0.5rem;
+        }
+
+        .read-more {
+            display: inline-block;
+            padding: 0.5rem 1rem;
+            background: #e67e22;
+            color: white;
+            text-decoration: none;
+            border-radius: 5px;
+            margin-top: 1rem;
+            transition: background 0.3s ease;
+        }
+
+        .read-more:hover {
+            background: #d35400;
+        }
+    </style>
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="navbar">
+        <div class="logo">
+            <img src="logo.png" alt="DTP Construction Logo" class="logo-img">
+            <h1>DTP-Constructions</h1>
+        </div>
+        <ul class="nav-links">
+            <li><a href="index.html">Home</a></li>
+            <li><a href="about.html">About</a></li>
+            <li><a href="service.html">Services</a></li>
+            <li><a href="project.html">Projects</a></li>
+            <li><a href="index.html#contact">Contact</a></li>
+        </ul>
+        <div class="burger">
+            <div class="line1"></div>
+            <div class="line2"></div>
+            <div class="line3"></div>
+        </div>
+    </nav>
+
+    <!-- Project Hero Section -->
+    <section class="project-hero">
+        <div class="hero-content">
+            <h1>Our Projects</h1>
+            <p>Discover Our Construction Excellence</p>
+        </div>
+    </section>
+
+    <!-- Projects Section -->
+    <section class="projects-content">
+        <div class="filter-buttons">
+            <button class="filter-btn active" data-filter="all">All Projects</button>
+            <button class="filter-btn" data-filter="residential">Residential</button>
+            <button class="filter-btn" data-filter="commercial">Commercial</button>
+            <button class="filter-btn" data-filter="infrastructure">Infrastructure</button>
+            <button class="filter-btn" data-filter="renovation">Renovation</button>
+        </div>
+
+        <div class="projects-grid">
+            <!-- Residential Project -->
+            <div class="project-card" data-category="residential">
+                <div class="project-image">
+                    <img src="images/projects/residential1.jpg" alt="Modern Home Project">
+                    <div class="project-overlay">
+                        <a href="#" class="read-more">View Details</a>
+                    </div>
+                </div>
+                <div class="project-details">
+                    <h3>Modern Family Home</h3>
+                    <div class="project-meta">
+                        <span><i class="fas fa-map-marker-alt"></i> Ahmedabad</span>
+                        <span><i class="fas fa-calendar"></i> 2023</span>
+                    </div>
+                    <p>A contemporary 4-bedroom family home with sustainable features.</p>
+                </div>
+            </div>
+
+            <!-- Commercial Project -->
+            <div class="project-card" data-category="commercial">
+                <div class="project-image">
+                    <img src="images/projects/commercial1.jpg" alt="Office Building">
+                    <div class="project-overlay">
+                        <a href="#" class="read-more">View Details</a>
+                    </div>
+                </div>
+                <div class="project-details">
+                    <h3>Tech Hub Office Complex</h3>
+                    <div class="project-meta">
+                        <span><i class="fas fa-map-marker-alt"></i> Mumbai</span>
+                        <span><i class="fas fa-calendar"></i> 2023</span>
+                    </div>
+                    <p>State-of-the-art office building with smart technology integration.</p>
+                </div>
+            </div>
+
+            <!-- Infrastructure Project -->
+            <div class="project-card" data-category="infrastructure">
+                <div class="project-image">
+                    <img src="images/projects/infrastructure1.jpg" alt="Bridge Project">
+                    <div class="project-overlay">
+                        <a href="#" class="read-more">View Details</a>
+                    </div>
+                </div>
+                <div class="project-details">
+                    <h3>City Bridge Renovation</h3>
+                    <div class="project-meta">
+                        <span><i class="fas fa-map-marker-alt"></i> Delhi</span>
+                        <span><i class="fas fa-calendar"></i> 2023</span>
+                    </div>
+                    <p>Historic bridge restoration and modernization project.</p>
+                </div>
+            </div>
+
+            <!-- Renovation Project -->
+            <div class="project-card" data-category="renovation">
+                <div class="project-image">
+                    <img src="images/projects/renovation1.jpg" alt="Home Renovation">
+                    <div class="project-overlay">
+                        <a href="#" class="read-more">View Details</a>
+                    </div>
+                </div>
+                <div class="project-details">
+                    <h3>Heritage Home Restoration</h3>
+                    <div class="project-meta">
+                        <span><i class="fas fa-map-marker-alt"></i> Uttar Pradesh</span>
+                        <span><i class="fas fa-calendar"></i> 2023</span>
+                    </div>
+                    <p>Complete restoration of a historic Victorian home.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Blog Section -->
+    <section class="blog-section">
+        <div class="projects-content">
+            <h2>Latest Insights</h2>
+            <div class="blog-grid">
+                <div class="blog-card">
+                    <div class="blog-image">
+                        <img src="images/blog/renovation-tips.jpg" alt="Renovation Tips">
+                    </div>
+                    <div class="blog-content">
+                        <div class="blog-date">May 15, 2024</div>
+                        <h3>How to Plan a Successful Home Renovation</h3>
+                        <p>Essential tips and considerations for planning your home renovation project...</p>
+                        <a href="#" class="read-more">Read More</a>
+                    </div>
+                </div>
+
+                <div class="blog-card">
+                    <div class="blog-image">
+                        <img src="images/blog/sustainable-building.jpg" alt="Sustainable Building">
+                    </div>
+                    <div class="blog-content">
+                        <div class="blog-date">May 10, 2024</div>
+                        <h3>Sustainable Building Trends in 2024</h3>
+                        <p>Discover the latest trends in sustainable construction and green building...</p>
+                        <a href="#" class="read-more">Read More</a>
+                    </div>
+                </div>
+
+                <div class="blog-card">
+                    <div class="blog-image">
+                        <img src="images/blog/construction-tech.jpg" alt="Construction Technology">
+                    </div>
+                    <div class="blog-content">
+                        <div class="blog-date">May 5, 2024</div>
+                        <h3>New Technologies in Construction</h3>
+                        <p>Exploring innovative technologies that are transforming the construction industry...</p>
+                        <a href="#" class="read-more">Read More</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="footer-content">
+            <div class="footer-section">
+                <h3>DTP Constructions</h3>
+                <p>Building excellence since 2010</p>
+            </div>
+            <div class="footer-section">
+                <h3>Quick Links</h3>
+                <ul>
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="about.html">About</a></li>
+                    <li><a href="service.html">Services</a></li>
+                    <li><a href="project.html">Projects</a></li>
+                </ul>
+            </div>
+            <div class="footer-section">
+                <h3>Follow Us</h3>
+                <div class="social-links">
+                    <a href="#"><i class="fab fa-facebook"></i></a>
+                    <a href="#"><i class="fab fa-twitter"></i></a>
+                    <a href="#"><i class="fab fa-linkedin"></i></a>
+                    <a href="#"><i class="fab fa-instagram"></i></a>
+                </div>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2025 DTP Constructions. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+    <script>
+        // Project Filter Functionality
+        const filterButtons = document.querySelectorAll('.filter-btn');
+        const projectCards = document.querySelectorAll('.project-card');
+
+        filterButtons.forEach(button => {
+            button.addEventListener('click', () => {
+                // Remove active class from all buttons
+                filterButtons.forEach(btn => btn.classList.remove('active'));
+                // Add active class to clicked button
+                button.classList.add('active');
+
+                const filter = button.getAttribute('data-filter');
+
+                projectCards.forEach(card => {
+                    if (filter === 'all' || card.getAttribute('data-category') === filter) {
+                        card.style.display = 'block';
+                    } else {
+                        card.style.display = 'none';
+                    }
+                });
+            });
+        });
+    </script>
+</body>
+</html>
